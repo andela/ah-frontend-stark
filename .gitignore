@@ -3,6 +3,11 @@ package-lock.json
 # dependencies
 /node_modules
 
+# vscode
 .vscode
 
+# coverage
 coverage
+
+# DS store
+.DS_Store
