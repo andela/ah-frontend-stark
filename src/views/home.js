@@ -1,8 +1,9 @@
 import React from 'react';
+import LandingPage from '../components/LandingPage';
 
 
 const HomePage = () => (
-  <h1>Welcome to Authors-Haven Home</h1>
+  <LandingPage />
 );
 
 export default HomePage;

@@ -1,0 +1,72 @@
+.header-image {
+  background-image: url("./images/fantasy-2543658_1920.jpg");
+  height: 60vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-flow: column;
+}
+
+.btn-index {
+  width: 8em;
+  height: 2.5em;
+  border-radius: 15px;
+  margin: 0.2em;
+}
+
+.card-image {
+  height: 60%;
+}
+
+.card-body {
+  height: 40%;
+}
+
+footer {
+  background: #8b3f08;
+  text-align: center;
+}
+
+footer,
+.btn-index,
+.header-image {
+  background-color: #8b3f08;
+  color: #fff;
+}
+
+.story-head,
+.top-story {
+  border-bottom: 2px solid #8b3f08;
+}
+
+.story-head,.head-text {
+  color: #8b3f08;
+}
+.article-container {
+  padding: 20px 60px 20px 60px;
+}
+
+.searchbar {
+  border-radius: 15px;
+  width: 15vh;
+  border-color: #8b3f08;
+  padding: 5px;
+}
+.head-text{
+font-size: 26px;
+}
+.searchbar:focus,.btn-index:focus{
+  outline:none;
+}
+body {
+  background-color: #f3f3f3;
+  font-family: 'Asap', sans-serif;
+}
+span, p {
+  font-family: 'Source Sans Pro', sans-serif;
+  color:#4c4c4c;
+}
+.x{
+  padding: 0;
+  height: 150px;
+}
