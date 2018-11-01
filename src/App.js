@@ -4,13 +4,12 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
-
-import './App.css';
 import LoginPage from './views/login';
 import HomePage from './views/home';
 import ErrorNotFound from './views/notfound';
+import './App.scss';
 
-class App extends Component {
+class App extends Component { 
   render() {
     return (
       <div>
