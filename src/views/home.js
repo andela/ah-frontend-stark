@@ -6,4 +6,5 @@ const HomePage = () => (
   <LandingPage />
 );
 
+
 export default HomePage;

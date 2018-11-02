@@ -1,0 +1,140 @@
+.auth-modal {
+  padding: 0px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+.auth-form {
+  position: relative;
+  margin-top: 120px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+  border-radius: 7px;
+  background-color: white;
+  padding: 50px;
+}
+
+.auth-error {
+  color: red !important;
+  text-align: center;
+}
+
+.auth-success {
+  color: green;
+  text-align: center;
+}
+
+.get-started {
+  background-color: #f2f2f2;
+}
+
+.auth-input {
+  width: 94.5%;
+  margin-right: auto;
+  margin-left: auto;
+  border: solid 1px chocolate !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.btn-submit {
+  display: block;
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+  color: white;
+  background-color: chocolate;
+  border: solid 1px chocolate;
+}
+
+.btn-submit:hover {
+  background: rgb(226, 145, 87);
+}
+
+.auth-submit:hover {
+  background: #af5e23;
+}
+
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.centred {
+  text-align: center;
+}
+
+.small-text {
+  text-align: center;
+  font-size: 13px;
+  color: 00008b;
+}
+
+.google {
+  background: #d34836;
+  border: 1px;
+  border-color: #d34836;
+}
+
+.google:hover {
+  background: #eb7262;
+}
+
+.facebook {
+  background: #3b5998;
+  border: 1px;
+  border-color: #3b5998;
+}
+
+.facebook:hover {
+  background: #8b9dc3;
+}
+
+.twitter {
+  background: #00aced;
+  border: 1px;
+  border-color: #00aced;
+}
+
+.twitter:hover {
+  background: #1dcaff;
+}
+
+.auth-modal {
+  display: block;
+}
+
+.loader {
+  margin: 4em auto;
+  font-size: 24px;
+  width: 1em;
+  height: 1em;
+  border-radius: 50%;
+  position: relative;
+  text-indent: -9999em;
+  -webkit-animation: load3 1.1s infinite ease;
+  animation: load3 1.1s infinite ease;
+}
+
+.modal-dialog {
+  max-width: unset !important;
+}
+
+.modal-form {
+  pointer-events: auto;
+  margin-left: auto;
+  margin-right: auto;
+  width: 40%;
+}
+
+.btn:focus, .btn:active {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.btn {
+  color: white !important;
+}
