@@ -29,7 +29,7 @@ footer {
 
 footer,
 .btn-index,
-.header-image {
+.header-image,.btn-signup {
   background-color: #8b3f08;
   color: #fff;
 }
