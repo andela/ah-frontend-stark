@@ -125,7 +125,6 @@ describe('article component', () => {
       deleteArticles: jest.fn(),
     };
     const wrapper = mount(<Router><ArticleCard store={store} {...props} /></Router>);
-    console.log(wrapper.html())
     wrapper.find('#but1').simulate('click');
     wrapper.find('#deleteButton').simulate('click');
   });

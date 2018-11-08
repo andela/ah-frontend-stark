@@ -13,6 +13,8 @@ import {
 } from '../actions/ArticleAction';
 import Rating from './Rating';
 import TagsList from './tags/ViewArticleTags';
+import Comments from './comments';
+
 
 class Article extends Component {
   state = {
@@ -80,6 +82,7 @@ componentDidUpdate(prevProps){
               </center>
               <br />
               <div>{renderHTML(article.body)}</div>
+              <Comments slug={article.slug} />
             </div>
           </div>
         </div>
