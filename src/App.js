@@ -4,23 +4,33 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
-import LoginPage from './views/login';
+import { Provider } from 'react-redux';
 import HomePage from './views/home';
 import ErrorNotFound from './views/notfound';
 import './App.scss';
+import store from './store';
+import ResetPassword from './views/ResetPassword';
+import Register from './views/Register';
+import TempHome from './components/TempHome';
 
-class App extends Component { 
+
+
+class App extends Component {
   render() {
     return (
-      <div>
-        <Router>
-          <Switch>
-            <Route exact path="/" component={HomePage} />
-            <Route exact path="/login" component={LoginPage} />
-            <Route component={ErrorNotFound} />
-          </Switch>
-        </Router>
-      </div>
+      <Provider store={store}>
+        <div>
+          <Router>
+            <Switch>
+              <Route exact path="/" component={HomePage} />
+              <Route exact path="/password-reset/" component={ResetPassword} />
+              <Route exact path="/users/" component={Register} />
+              <Route exact path="/homepage" component={TempHome} />
+              <Route component={ErrorNotFound} />
+            </Switch>
+          </Router>
+        </div>
+      </Provider>
     );
   }
 }
