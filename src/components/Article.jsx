@@ -1,7 +1,7 @@
-import React from 'react';
-import BigCard from './BigCard';
-import TopStory from './TopStoryCard';
-import SmallCard from './SmallCard';
+import React from "react";
+import BigCard from "./BigCard";
+import TopStory from "./TopStoryCard";
+import SmallCard from "./SmallCard";
 
 const Articles = () => (
   <div className="article-container row bg-light">

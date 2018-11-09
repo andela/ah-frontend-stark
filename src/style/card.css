@@ -1,0 +1,11 @@
+.article-body *{
+    font-family: 'Asap', sans-serif !important;
+    height:90px;
+    width:100%;
+    text-decoration:none !important;
+    font-weight: normal !important;
+    font-size: 15px !important; 
+    text-overflow: ellipsis;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    }

@@ -8,7 +8,7 @@ class CreateArticles extends Component {
         <CreateUpdate
           article1="creating_article"
           button_name="Create Article"
-          articleAction="CREATE A NEW ARTICLE"
+          articleAction="Create a new article"
         />
       </div>
     );

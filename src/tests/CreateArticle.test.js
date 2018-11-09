@@ -31,7 +31,7 @@ describe('article component', () => {
   });
 
   it('should test get all articles without crashing', () => {
-    mount(<GetArticles store={store} />);
+    mount(<BrowserRouter><GetArticles store={store} /></BrowserRouter>);
   });
   it('should test get single article without crashing', () => {
     mount(
