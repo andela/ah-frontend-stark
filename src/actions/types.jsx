@@ -1,2 +1,4 @@
 export const LOGIN_FAILURE = 'LOGIN_FAILURE';
 export const LOGIN_SUCCESS = 'LOGIN_SUCCESS';
+export const FETCH_PROFILE = 'FETCH_PROFILE';
+export const UPDATE_PROFILE = 'UPDATE_PROFILE';

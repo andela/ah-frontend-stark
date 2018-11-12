@@ -5,6 +5,8 @@ import {
 import combineReducers from './reducers';
 
 
-const store = createStore(combineReducers, applyMiddleware(thunk));
+const store = createStore(
+  combineReducers,
+  compose(applyMiddleware(thunk)))
 
 export default store;

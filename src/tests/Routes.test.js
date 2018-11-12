@@ -3,6 +3,7 @@ import { MemoryRouter } from 'react-router-dom';
 import { shallow } from 'enzyme';
 import HomePage from '../views/home';
 import ErrorNotFound from '../views/notfound';
+import ViewProfile from '../views/profile';
 
 
 it('checks that an invalid path redirects to 404 page', () => {

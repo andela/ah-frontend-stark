@@ -12,11 +12,13 @@ import store from './store';
 import ResetPassword from './views/ResetPassword';
 import Register from './views/Register';
 import TempHome from './components/TempHome';
-
-
+import EditProfile from "./views/editProfile";
+import ViewProfile from "./views/profile";
 
 class App extends Component {
   render() {
+    let username = localStorage.getItem("username");
+    console.log(username)
     return (
       <Provider store={store}>
         <div>
@@ -26,6 +28,8 @@ class App extends Component {
               <Route exact path="/password-reset/" component={ResetPassword} />
               <Route exact path="/users/" component={Register} />
               <Route exact path="/homepage" component={TempHome} />
+              <Route exact path={"/profile/" + username} component={ViewProfile}/>
+              <Route exact path={"/profile/" + username + "/edit"} component={EditProfile}/>
               <Route component={ErrorNotFound} />
             </Switch>
           </Router>
