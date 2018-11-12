@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import { withRouter } from "react-router-dom";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
-import loginAction from "../actions/loginActions";
+import { loginAction } from "../actions/loginActions";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "../style/signin.css";
 
@@ -27,9 +27,11 @@ export class LoginForm extends Component {
         password: this.state.password
       }
     };
-    this.props.loginAction(userdata).then(() => {
-      const { history } = this.props;
-      history.push("/homepage");
+    this.props.loginAction(userdata).then(response => {
+      if (response.success) {
+        const { history } = this.props;
+        history.push("/homepage");
+      }
     });
   };
 
@@ -50,7 +52,7 @@ export class LoginForm extends Component {
 
   toggleModal = () => {
     this.props.toggleModal();
-  }
+  };
 
   render() {
     const { message, status } = this.props;
@@ -80,11 +82,7 @@ export class LoginForm extends Component {
                 onChange={this.onChange}
               />
             </div>
-            <button
-              type="submit"
-              className="btn btn-submit"
-              id="submit"
-            >
+            <button type="submit" className="btn btn-submit" id="submit">
               Submit
             </button>
             <br />
@@ -114,9 +112,9 @@ export class LoginForm extends Component {
             <b>
               {status === "error"
                 ? this.listErrors(message)
-                : (status === "loading")
-                  ? (this.toggleModal())
-                  : null}
+                : status === "loading"
+                ? this.toggleModal()
+                : null}
             </b>
           </div>
         </div>

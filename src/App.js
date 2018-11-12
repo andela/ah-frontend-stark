@@ -7,12 +7,11 @@ import {
 import { Provider } from 'react-redux';
 import HomePage from './views/home';
 import ErrorNotFound from './views/notfound';
-import './App.scss';
 import store from './store';
 import ResetPassword from './views/ResetPassword';
 import Register from './views/Register';
 import TempHome from './components/TempHome';
-
+import './App.scss';
 
 
 class App extends Component {
