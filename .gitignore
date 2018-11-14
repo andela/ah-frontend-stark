@@ -12,5 +12,5 @@ coverage
 # DS store
 .DS_Store
 
-# Dotenv file
+# Dotenv
 .env

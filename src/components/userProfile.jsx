@@ -7,6 +7,7 @@ import { Link } from 'react-router-dom';
 import ProfilePic from './profilePic';
 import ArticleCard from './ArticleCard';
 import { fetchProfile } from '../actions/profileActions';
+import NavigationBar from './navigation/NavigationBar';
 
 export class ProfilePage extends Component {
   componentDidMount() {
@@ -23,7 +24,7 @@ export class ProfilePage extends Component {
 
     return (
       <React.Fragment>
-        {/* <NavBar /> */}
+        <NavigationBar />
         <div className="container">
           <div className="row center-block align-items-center text-center profile">
             <div className="col-sm-1" />
