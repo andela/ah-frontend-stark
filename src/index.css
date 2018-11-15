@@ -69,3 +69,39 @@ span, p {
   padding: 0;
   height: 150px;
 }
+.create_article{
+  font-weight:bolder;
+  font-family: 'Asap', sans-serif;
+  color: #8b3f08;
+  padding-bottom:10px;
+  padding-top:10px;
+  text-align:center;
+}
+.article{
+width:80%;
+background-color:#f3f3f3;
+height:5%;
+margin: 0 auto;
+padding:7px;
+}
+.width{
+  width:70%;
+  text-align:center;
+}
+.center{
+  text-align:center;
+}
+.dangeralert{
+color:red;
+font-weight:bold;
+padding:15px;
+}
+.btn-outline-brown {
+  color: chocolate;
+  border: solid 1px chocolate;
+}
+input:focus, .btn:active {
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-box-shadow: none;
+}
