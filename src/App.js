@@ -21,6 +21,7 @@ import ViewProfile from "./views/profile";
 import SignupPage from './views/signup';
 import AccountVerification from './components/AccountVerification';
 
+import SocialAuth from './components/SocialAuth';
 
 class App extends Component {
   render() {
@@ -41,6 +42,7 @@ class App extends Component {
               <Route exact path={"/profile/" + username + "/edit"} component={EditProfile}/>
               <Route exact path="/signup" component={SignupPage} />
               <Route exact path="/signup/verify/" component={AccountVerification} />
+              <Route exact path="/social/verify/" component={SocialAuth} />
               <Route component={ErrorNotFound} />
               <Route exact path="/404" component={ErrorNotFound} />
             </Switch>

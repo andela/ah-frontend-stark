@@ -1,10 +1,12 @@
-import React, { Component } from "react";
-import { withRouter } from "react-router-dom";
-import PropTypes from "prop-types";
-import { connect } from "react-redux";
-import loginAction from "../actions/loginActions";
-import "bootstrap/dist/css/bootstrap.min.css";
-import "../style/signin.css";
+import React, { Component } from 'react';
+import { withRouter } from 'react-router-dom';
+import PropTypes from 'prop-types';
+import { connect } from 'react-redux';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import loginAction from '../actions/loginActions';
+import '../style/signin.css';
+import '../css/social.css';
+import { SOCIAL_REDIRECT_URL, SOCIAL_LAUNCH_DEFAULT_URL } from '../common/base';
 
 export class LoginForm extends Component {
   state = {
@@ -53,6 +55,11 @@ export class LoginForm extends Component {
     this.props.toggleModal();
   }
 
+  handleSocial = (provider) => {
+    const queryparams = '?Provider=' + provider + '&RedirectTo=' + SOCIAL_REDIRECT_URL;
+    window.location = SOCIAL_LAUNCH_DEFAULT_URL  + provider + '/' + queryparams;
+  };
+
   render() {
     const { message, status } = this.props;
     return (
@@ -99,18 +106,18 @@ export class LoginForm extends Component {
               </u>
             </p>
             <hr />
-            <button type="button" className="btn btn-block google">
-              Login with Google
-            </button>
-            <br />
-            <button type="button" className="btn btn-block facebook">
-              Login with Facebook
-            </button>
-            <br />
-            <button type="button" className="btn btn-block twitter">
-              Login with Twitter
-            </button>
           </form>
+          <button type="button" className="btn btn-block google social-btn" onClick={() => this.handleSocial('google')}>
+              Login with Google
+          </button>
+            <br />
+          <button type="button" className="btn btn-block facebook social-btn" onClick={() => this.handleSocial('facebook')}>
+              Login with Facebook
+          </button>
+            <br />
+          <button type="button" className="btn btn-block twitter social-btn" onClick={() => this.handleSocial('twitter')}>
+              Login with Twitter
+          </button>
           <div className="auth-error">
             <b>
               {status === "error"
@@ -129,7 +136,7 @@ export class LoginForm extends Component {
 LoginForm.propTypes = {
   loginAction: PropTypes.func.isRequired,
   email: PropTypes.string.isRequired,
-  password: PropTypes.string.isRequired
+  password: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = state => ({
