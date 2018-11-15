@@ -27,6 +27,7 @@ import AccountVerification from './components/AccountVerification';
 import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 
+import SocialAuth from './components/SocialAuth';
 
 class App extends Component {
   render() {
@@ -51,6 +52,7 @@ class App extends Component {
               <Route exact path="/myArticles" component={MyArticles} />
               <Route exact path="/signup" component={SignupPage} />
               <Route exact path="/signup/verify/" component={AccountVerification} />
+              <Route exact path="/social/verify/" component={SocialAuth} />
               <Route component={ErrorNotFound} />
               <Route exact path="/404" component={ErrorNotFound} />
             </Switch>
