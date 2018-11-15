@@ -27,9 +27,11 @@
     "react-router": "^4.3.1",
     "react-router-dom": "^4.3.1",
     "react-scripts": "2.1.0",
-    "react-toastify": "^4.4.0",
+    "react-stars": "^2.2.5",
+    "react-toastify": "^4.4.3",
     "reactstrap": "^6.5.0",
     "redux": "^4.0.1",
+    "redux-logger": "^3.0.6",
     "redux-mock-store": "^1.5.3",
     "redux-thunk": "^2.3.0",
     "yarn": "^1.12.3"

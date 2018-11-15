@@ -2,12 +2,15 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import renderHTML from 'react-render-html';
 import PropTypes from 'prop-types';
-import NavigationBar from './navigation/NavigationBar';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import {
   singleArticle,
   likeArticle,
   dislikeArticle
 } from '../actions/ArticleAction';
+import NavigationBar from './navigation/NavigationBar';
+import Rating from './Rating';
 
 
 class Article extends Component {
@@ -46,58 +49,51 @@ class Article extends Component {
     const articles = data1.map(article => (
       <div key={article.slug}>
         <br />
-        <div className="row">
+        <div className="row add-mg-top">
           <div className="col-lg-1" />
           <div className="col-lg-10">
             <div className="center"><h3>{article.title}</h3></div>
             <div className="center"><h5>{article.description}</h5></div>
+            <ToastContainer />
             <center><img src={require('../images/a1.jpg')} /></center>
             <br />
             <div>
               {renderHTML(article.body)}
             </div>
-            <center>
-            <div className="row article fixed-bottom">
-              <div className="col-lg-1">
-                <button
-                  name="like"
-                  type="button"
-                  className="far fa-thumbs-up"
-                  id="like"
-                  onClick={this.handleLike}
-                >  {article.likes}
-                </button>
-              </div>
-              <div className="col-lg-1">
-                <button
-                  name="dislike"
-                  type="button"
-                  className="far fa-thumbs-down"
-                  id="like"
-                  onClick={this.handleLike}
-                >  {article.dislikes}
-                </button>
-              </div>
-              <div className="col-lg-2">
-                favouritesCount:
-                {article.favouritesCount}
-              </div>
-              <div className="col-lg-1">
-                    ratings:
-                {article.ratings}
-              </div>
-              <div className="col-lg-2">
-                ratingsCount:
-                {article.ratingsCount}
-              </div>
-              <div className="col-lg-4">
-              createdAt:
-                {article.createdAt}
-              </div>
-              </div></center>
-            <br />
           </div>
-          <div className="col-lg-1" />
+        </div>
+        <div className="row rating-bar fixed-bottom ">
+          <div className="col-lg-3">
+                Likes
+            <button 
+            name="like"
+            type="button"
+            id="like"
+            onClick={this.handleLike}
+            className="far fa-thumbs-up btn-rate" />
+            {article.likes}
+          </div>
+          <div className="col-lg-3">
+                Dislikes
+            <button 
+            name="dislike"
+            type="button"
+            id="like"
+            onClick={this.handleLike}
+            className="far fa-thumbs-down btn-rate" />
+            {article.dislikes}
+          </div>
+          <div className="col-lg-3">
+                Favorites
+            <button className="far fa-heart btn-rate" />
+            {article.favoritesCount}
+          </div>
+            <div className="col-lg-2">
+              <Rating
+              rating={article.rating}
+              message="null"
+              slug={article.slug} />
+          </div>
         </div>
       </div>
     ));

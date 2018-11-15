@@ -32,7 +32,11 @@ describe('Login Component', () => {
   });
 
   it('should mount component without crashing', () => {
-    mount(<LoginForm store={store} />);
+    mount(<LoginForm 
+      store={store} 
+      email="none"
+      password="none"
+      loginAction={loginAction} />);
   });
 
   it('form should call handleSubmit when submit button is clicked', () => {
