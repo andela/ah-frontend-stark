@@ -1,7 +1,9 @@
 import React from "react";
-
+import { Link } from 'react-router-dom';
 
 const loggedIn = Object.keys(localStorage).length;
+let username = localStorage.getItem('username');
+let profileUrl = "/profile/" + username;
 const NavBar = () => (
   <div className="row p-3 bg-light rounded">
     <span className="col-9 head-text">Authors Haven</span>
@@ -9,12 +11,14 @@ const NavBar = () => (
       <input className="searchbar" type="text" placeholder="Search..." />
 
       {loggedIn ? (
+        <Link to={profileUrl}>
         <button
           className="btn-index"
           type="button"
         >
           Profile
         </button>
+        </Link>
       ) : (
         <button
           className="btn-index"
