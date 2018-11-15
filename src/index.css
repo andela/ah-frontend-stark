@@ -127,3 +127,18 @@ input:focus, .btn:active {
   background-color: rgb(210, 105, 30);
   color:white;
 }
+.far:hover {
+  font-weight: 900 !important;
+}
+.far {
+  color: black !important;
+}
+
+.far:active {
+  font-weight: 900 !important;
+  background-color: rgb(209, 209, 209) !important;
+  color: black;
+  outline: none !important;
+  box-shadow: none !important;
+  -webkit-box-shadow: none;
+}
