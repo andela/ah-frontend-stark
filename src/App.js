@@ -18,6 +18,9 @@ import Register from './views/Register';
 import TempHome from './components/TempHome';
 import EditProfile from "./views/editProfile";
 import ViewProfile from "./views/profile";
+import SignupPage from './views/signup';
+import AccountVerification from './components/AccountVerification';
+
 
 class App extends Component {
   render() {
@@ -36,6 +39,8 @@ class App extends Component {
               <Route exact path="/getArticles" component={GetArticles} />
               <Route exact path={"/profile/" + username} component={ViewProfile} />
               <Route exact path={"/profile/" + username + "/edit"} component={EditProfile}/>
+              <Route exact path="/signup" component={SignupPage} />
+              <Route exact path="/signup/verify/" component={AccountVerification} />
               <Route component={ErrorNotFound} />
               <Route exact path="/404" component={ErrorNotFound} />
             </Switch>

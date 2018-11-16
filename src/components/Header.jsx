@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = () => (
   <div className="header-image">
@@ -7,7 +8,7 @@ const Header = () => (
     </div>
 
     <div>
-      <button className="btn-index" type="button">Get started</button>
+      <Link to="/signup"><button className="btn-index" type="button">Get started</button></Link>
     </div>
   </div>
 );
