@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 
 import ProfilePic from "./profilePic";
 import { updateProfile } from "../actions/profileActions";
+import NavigationBar from './navigation/NavigationBar';
 
 class ProfileUpdate extends Component {
   state = {
@@ -74,9 +75,10 @@ class ProfileUpdate extends Component {
   render() {
     return (
       <React.Fragment>
-        {/* <NavBar /> */}
+        <NavigationBar />
         <br />
         <div className="container">
+        <div className="empty-div"/>
           <div className="row text-center">
             <div className="col-sm-2" />
             <div className="col-sm-8">

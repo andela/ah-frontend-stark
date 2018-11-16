@@ -6,6 +6,7 @@ import ArticleForm from './ArticleForm';
 import Modules from '../utils/Editorplugins';
 import getErrorMessages from '../utils/ArticleValidation';
 import DangerAlert from './alert'
+import NavigationBar from './navigation/NavigationBar';
 class CreateUpdate extends Component {
     
         state = {
@@ -49,6 +50,7 @@ class CreateUpdate extends Component {
             this.props.article.errors)
         return ( 
             <div>
+                <NavigationBar />
             <div className="create_article"><span>{this.props.articleAction}</span></div>
         <ArticleForm
         change={this.change} 

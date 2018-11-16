@@ -1,58 +1,56 @@
 .heading {
-    color: chocolate;
-    font-size: 2em;
-  }
-  
-  hr {
-    margin-bottom: 40px;
-    width: 90%;
-  }
-  
-  .profile-card {
-    width: 100%;
-    height: 17em;
-    box-shadow: 2px -2px 12px rgba(114, 107, 111, 0.21);
-    border-radius: 0;
-    margin-bottom: 20px;
-    background-color: #f3f3f3;
-    padding: 35px;
-  }
-  
-  .profile {
-    min-height: 40vh;
-  }
-  
-  .btn-outline-brown {
-    color: chocolate;
-    border: solid 1px chocolate;
-  }
-  
-  .fa-map-marker {
-    padding-right: 10px;
-  }
-  
-  .nav-bar {
-    width: 100%;
-    height: 8vh;
-    background-color: white;
-    box-shadow: 2px -2px 12px rgba(114, 107, 111, 0.21);
-  }
-  
-  .long {
-    width: 100%;
-    margin-bottom: 15px;
-    height: 40px;
-    border: 0;
-    border-bottom: solid 1px #4c4c4c;
-    background-color: #f3f3f3;
-  }
-  
-  input:focus {
-    outline: none;
-  }
-  
-  .btn:focus {
-    outline: none !important;
-    box-shadow: none !important;
-  }
-  
+  color: chocolate;
+  font-size: 2em;
+}
+
+hr {
+  margin-bottom: 40px;
+  width: 90%;
+}
+
+.profile-card {
+  width: 100%;
+  height: 17em;
+  box-shadow: 2px -2px 12px rgba(114, 107, 111, 0.21);
+  border-radius: 0;
+  margin-bottom: 20px;
+  background-color: #f3f3f3;
+  padding: 35px;
+}
+
+.profile {
+  min-height: 50vh;
+}
+
+.fa-map-marker {
+  padding-right: 10px;
+}
+
+.nav-bar {
+  width: 100%;
+  height: 8vh;
+  background-color: white;
+  box-shadow: 2px -2px 12px rgba(114, 107, 111, 0.21);
+}
+
+.long {
+  width: 100%;
+  margin-bottom: 15px;
+  height: 40px;
+  border: 0;
+  border-bottom: solid 1px #4c4c4c;
+  background-color: #f3f3f3;
+}
+
+input:focus {
+  outline: none;
+}
+
+.btn:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+.empty-div {
+  height: 6em;
+}

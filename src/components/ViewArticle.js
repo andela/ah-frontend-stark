@@ -3,7 +3,7 @@ import { connect } from 'react-redux';
 import renderHTML from 'react-render-html';
 import PropTypes from 'prop-types';
 import { singleArticle } from '../actions/ArticleAction';
-import NavBar from './NavBar';
+import NavigationBar from './navigation/NavigationBar';
 
 
 class Article extends Component {
@@ -66,8 +66,8 @@ class Article extends Component {
 
     return (
       <div>
-        <NavBar />
-        <div className="container">
+        <NavigationBar />
+        <div className="container margin-top">
           {articles}
           <br />
         </div>

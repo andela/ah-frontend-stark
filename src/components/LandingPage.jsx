@@ -4,11 +4,12 @@ import Articles from './Articles';
 import Footer from './Footer';
 import StoryHead from './StoriesHead';
 import LoginModal from './LoginModal';
-import NavBar from './NavBar';
+import NavigationBar from './navigation/NavigationBar';
 
 const LandingPage = () => (
   <div>
-    <NavBar />
+    {/* <NavBar /> */}
+    <NavigationBar />
     <Header />
     <LoginModal />
     <StoryHead />

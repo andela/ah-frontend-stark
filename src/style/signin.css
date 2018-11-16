@@ -34,7 +34,7 @@
   width: 94.5%;
   margin-right: auto;
   margin-left: auto;
-  border: solid 1px chocolate !important;
+  border: solid 1px #8b3f08 !important;
   outline: none !important;
   box-shadow: none !important;
 }
@@ -45,8 +45,8 @@
   margin-left: auto;
   margin-right: auto;
   color: white;
-  background-color: chocolate;
-  border: solid 1px chocolate;
+  background-color: #8b3f08;
+  border: solid 1px #8b3f08;
 }
 
 .btn-submit:hover {
@@ -130,7 +130,8 @@
   width: 40%;
 }
 
-.btn:focus, .btn:active {
+.btn:focus,
+.btn:active {
   outline: none !important;
   box-shadow: none !important;
 }

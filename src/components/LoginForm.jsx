@@ -29,6 +29,7 @@ export class LoginForm extends Component {
     };
     this.props.loginAction(userdata).then(() => {
       const { history } = this.props;
+      window.location.reload();
       history.push("/homepage");
     });
   };
