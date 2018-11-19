@@ -1,0 +1,15 @@
+.rating-bar {
+  width: 80%;
+  margin: 0 auto;
+  height: 3em;
+  padding-top: 12px;
+  color: white;
+  background-color: chocolate;
+  text-align: center;
+}
+
+.btn-rate {
+    color: white;
+    background-color: chocolate;
+    border: 0;
+}

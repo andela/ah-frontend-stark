@@ -83,13 +83,7 @@ p {
   text-align:center;
 
 }
-.article{
-width:80%;
-background-color:#f3f3f3;
-height:5%;
-margin: 0 auto;
-padding:7px;
-}
+
 .width{
   width:70%;
   text-align:center;
@@ -129,16 +123,18 @@ input:focus, .btn:active {
 }
 .far:hover {
   font-weight: 900 !important;
-}
-.far {
   color: black !important;
 }
-
-.far:active {
+.far {
+  background-color: chocolate;
   font-weight: 900 !important;
-  background-color: rgb(209, 209, 209) !important;
-  color: black;
   outline: none !important;
   box-shadow: none !important;
   -webkit-box-shadow: none;
+}
+.far:active {
+  color: black;
+}
+.add-mg-top {
+  margin-top: 5em;
 }
