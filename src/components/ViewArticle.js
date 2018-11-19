@@ -20,6 +20,7 @@ class Article extends Component {
   state = {
     createdAt:"",
     author:"",
+    readTime:"",
   }
   componentDidMount() {
     if (this.props.match.params.slug) {
@@ -57,7 +58,8 @@ componentDidUpdate(prevProps){
     const data2=data1[0];
       this.setState({
         createdAt:data2["createdAt"],
-        author:data2["author_name"]
+        author:data2["author_name"],
+        readTime:data2["read_time"],
       })
 
     }
@@ -135,15 +137,18 @@ componentDidUpdate(prevProps){
       <div>
         <NavigationBar />
         <div className="container margin-top">
-       
-        <div class="row article-marign ">
-        <div className="col-lg-1"></div>
-        <div className="col-lg-10">
-        <ArticleHeader image={image} date={this.state.createdAt} author={this.state.author}/></div>
-        </div>
-          {articles}
-          <br />
-        
+          <div class="row article-marign ">
+            <div className="col-lg-1"></div>
+            <div className="col-lg-10">
+              <ArticleHeader
+              image={image}
+              date={this.state.createdAt}
+              author={this.state.author}
+              readTime={this.state.readTime}/>
+            </div>
+          </div>
+            {articles}
+            <br />
         </div>
       </div>
     );

@@ -4,7 +4,6 @@ import {connect} from 'react-redux';
 import PropTypes from 'prop-types';
 import { deleteArticles } from '../actions/ArticleAction';
 import ArticleHeader from './ArticleHeader';
-import renderHTML from 'react-render-html';
 import '../style/card.css'
 export class ArticleCard extends Component {
   state = {};
@@ -17,7 +16,11 @@ export class ArticleCard extends Component {
     return (
       <div>
       <div className="profile-card ">
-        <ArticleHeader image={image} date={this.props.date} author={this.props.author}/><br />
+        <ArticleHeader
+        image={image}
+        date={this.props.date}
+        author={this.props.author}
+        readTime={this.props.readTime}/><br />
         <div className="row">
         <div className="col-lg-11 line">
               <Link to={`/article/${this.props.slug}`}>
@@ -33,7 +36,6 @@ export class ArticleCard extends Component {
             <div class="row">
             <div class="col-lg-12"> <button className="fa fa-edit btn-article" id="but1" aria-hidden="true" onClick={()=>{this.goUpdate(this.props.slug)}}/></div></div><br /><br />
           <div class="row"><div class="col-lg-12"><button type="button" id="deleteButton" className="fa fa-trash btn-article" onClick={()=>{this.props.deleteArticles(this.props.slug)}}/></div></div></div> :" "}</div>
-            {/* Icons bar goes here */}
       </div>
       </div>
     );

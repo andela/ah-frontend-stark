@@ -24,12 +24,11 @@ import EditProfile from "./views/editProfile";
 import ViewProfile from "./views/profile";
 import SignupPage from './views/signup';
 import AccountVerification from './components/AccountVerification';
-import { ToastContainer } from "react-toastify";
-import "react-toastify/dist/ReactToastify.min.css";
-
 import SocialAuth from './components/SocialAuth';
 import UpdatePassword from './views/updatePassword';
 import SuccessPage from './views/successPage';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 
 class App extends Component {
   render() {
