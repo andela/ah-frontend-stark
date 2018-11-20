@@ -31,21 +31,6 @@ it('ProfilePic renders without fail', () => {
   mount(<ProfilePic />);
 });
 
-it('ArticleCard renders without fail', () => {
-  mount(<ArticleCard />);
-});
-
-describe('profile page', () => {
-  let component;
-
-  beforeEach(() => {
-    const fetchProfile = jest.fn();
-    component = shallow(<ProfilePage fetchProfile={fetchProfile} />);
-  });
-  it('renders profile page', () => {
-    component.contains(<ProfilePic />);
-  });
-});
 
 it('renders ProfileView without fail', () => {
   shallow(<ViewProfile />);

@@ -16,20 +16,3 @@ it('signup page renders without crashing', () => {
   expect(wrapper.find(SignupForm)).toHaveLength(1);
 });
 
-describe('User Reducer', () => {
-  test('returns the default state when given invalid data', () => {
-    const action = { type: 'invalid_type' };
-    expect(userReducer(undefined, action)).toEqual(initialState);
-  });
-
-  test('it returns correct state after successful registration', () => {
-    const testData = { user: { username: 'james', Token: 'xYzZq' } };
-    const action = { type: SIGNUP_SUCCESS, payload: testData };
-    const newstate = {
-      IsRegistered: true,
-      user: { user: { Token: 'xYzZq', username: 'james' } },
-      users: [],
-    };
-    expect(userReducer(undefined, action)).toEqual(newstate);
-  });
-});

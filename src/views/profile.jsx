@@ -1,9 +1,9 @@
 import React from 'react';
-import Profile from '../components/userProfile';
+import ProfilePage from '../components/userProfile';
 
-const ViewProfile = () => (
+const ViewProfile = username => (
   <React.Fragment>
-    <Profile />
+    <ProfilePage username={username} />
   </React.Fragment>
 );
 
