@@ -63,7 +63,7 @@ const NavigationBar = () => (
                 <Link class="dropdown-item" to="/createArticle">
                     Write article
                 </Link>
-                <Link className="dropdown-item" to="#">
+                <Link className="dropdown-item" to="/myArticles">
                     My articles
                 </Link>
                 <div className="dropdown-divider" />

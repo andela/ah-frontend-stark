@@ -9,7 +9,10 @@ import './index.css';
 import './style/article.css';
 import './App.scss';
 import HomePage from './views/home';
-import CreateArticles from './components/CreateArticle';
+import CreateArticle from './components/CreateArticle';
+import UpdateArticle from './components/UpdateArticle';
+import AllArticles from './components/AllArticles';
+import MyArticles from './components/MyArticles';
 import GetArticles from './components/GetArticles';
 import Article from './components/ViewArticle';
 import ErrorNotFound from './views/notfound';
@@ -21,6 +24,8 @@ import EditProfile from "./views/editProfile";
 import ViewProfile from "./views/profile";
 import SignupPage from './views/signup';
 import AccountVerification from './components/AccountVerification';
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
 
 
 class App extends Component {
@@ -29,17 +34,21 @@ class App extends Component {
     return (
       <Provider store={store}>
         <div>
+        <ToastContainer />
           <Router>
             <Switch>
               <Route exact path="/" component={HomePage} />
               <Route exact path="/password-reset/" component={ResetPassword} />
               <Route exact path="/users/" component={Register} />
               <Route exact path="/homepage" component={TempHome} />
-              <Route exact path="/createArticle" component={CreateArticles} />
+              <Route exact path="/createArticle" component={CreateArticle} />
+              <Route exact path="/article/:slug/Edit" component={UpdateArticle} />
               <Route exact path="/article/:slug" component={Article} />
               <Route exact path="/getArticles" component={GetArticles} />
               <Route exact path={"/profile/" + username} component={ViewProfile} />
               <Route exact path={"/profile/" + username + "/edit"} component={EditProfile}/>
+              <Route exact path="/allArticles" component={AllArticles} />
+              <Route exact path="/myArticles" component={MyArticles} />
               <Route exact path="/signup" component={SignupPage} />
               <Route exact path="/signup/verify/" component={AccountVerification} />
               <Route component={ErrorNotFound} />

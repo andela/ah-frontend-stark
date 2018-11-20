@@ -1,4 +1,5 @@
-import React from "react";
+import React from 'react';
+
 const StoryHead = () => (
   <div className="article-container row bg-light">
     <div className="story-head col-9 m-2">Featured Stories</div>

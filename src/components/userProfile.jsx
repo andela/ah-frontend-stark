@@ -21,6 +21,7 @@ export class ProfilePage extends Component {
     } = profile;
     const newUsername = localStorage.getItem('username');
     const editUrl = '/profile/' + newUsername + '/edit';
+    localStorage.setItem("image",image);
 
     return (
       <React.Fragment>

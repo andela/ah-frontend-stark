@@ -4,16 +4,20 @@ import renderHTML from 'react-render-html';
 import PropTypes from 'prop-types';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import NavigationBar from './navigation/NavigationBar';
+import ArticleHeader from './ArticleHeader';
 import {
   singleArticle,
   likeArticle,
   dislikeArticle
 } from '../actions/ArticleAction';
-import NavigationBar from './navigation/NavigationBar';
 import Rating from './Rating';
 
 
 class Article extends Component {
+  state = {
+    createdAt:"",
+  }
   componentDidMount() {
     if (this.props.match.params.slug) {
       const slug = this.props.match.params.slug;
@@ -42,9 +46,18 @@ class Article extends Component {
       this.props.singleArticle(this.props.match.params.slug);
     }
   }
+componentDidUpdate(prevProps){
+    if( this.props.article !== prevProps.article){
+    const data1 = Object.values(this.props.article);
+    const data2=data1[0];
+      this.setState({
+        createdAt:data2["createdAt"]
+      })
 
-
+    }
+}
   render() {
+    var image=localStorage.getItem("image")
     const data1 = Object.values(this.props.article);
     const articles = data1.map(article => (
       <div key={article.slug}>
@@ -52,12 +65,10 @@ class Article extends Component {
         <div className="row add-mg-top">
           <div className="col-lg-1" />
           <div className="col-lg-10">
-            <div className="center"><h3>{article.title}</h3></div>
-            <div className="center"><h5>{article.description}</h5></div>
-            <ToastContainer />
-            <center><img src={require('../images/a1.jpg')} /></center>
-            <br />
-            <div>
+            <div className="capital article-title"><h3>{article.title}</h3></div>
+            <div ><h5>{article.description}</h5></div>
+            <center><img className="img-article" src={article.image} /></center>
+            <div class="article-fontsize">
               {renderHTML(article.body)}
             </div>
           </div>
@@ -102,8 +113,15 @@ class Article extends Component {
       <div>
         <NavigationBar />
         <div className="container margin-top">
+       
+        <div class="row article-marign ">
+        <div className="col-lg-1"></div>
+        <div className="col-lg-10">
+        <ArticleHeader image={image} date={this.state.createdAt}/></div>
+        </div>
           {articles}
           <br />
+        
         </div>
       </div>
     );

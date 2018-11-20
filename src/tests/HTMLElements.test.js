@@ -1,6 +1,8 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import ArticleForm from '../components/ArticleForm';
+import DangerAlert from '../components/alert';
+import ErrorNotFound from '../views/notfound';
 
 let wrapper;
 let handleLike;
@@ -11,10 +13,18 @@ describe('<CreateArticle/>', () => {
   it('renders article form', () => {
     const field = shallow(<ArticleForm />);
     expect(field.find('input').length).toEqual(2);
-    expect(field.find('button').length).toEqual(1);
+    expect(field.find('button').length).toEqual(2);
     expect(field.find('form').length).toEqual(1);
-    expect(field.find('div').length).toEqual(5);
-    expect(field.find('center').length).toEqual(1);
+    expect(field.find('div').length).toEqual(6);
+    expect(field.find('center').length).toEqual(2);
+  });
+  it('test alert js', () => {
+    const field = shallow(<DangerAlert />);
+    expect(field.find('div').length).toEqual(1);
+  });
+  it('test alert js', () => {
+    const field = shallow(<ErrorNotFound />);
+    expect(field.find('h1').length).toEqual(1);
   });
 });
 
