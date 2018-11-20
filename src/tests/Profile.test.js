@@ -6,6 +6,8 @@ import { FETCH_PROFILE, UPDATE_PROFILE } from '../actions/types';
 import ArticleCard from '../components/ArticleCard';
 import ProfilePic from '../components/profilePic';
 import { ProfilePage } from '../components/userProfile';
+import ViewProfile from '../views/profile';
+import EditProfile from '../views/editProfile';
 
 it('profile reducer returns valid user profile data', () => {
   profileReducer(
@@ -26,11 +28,11 @@ it('profile reducer returns data on editing a user profile data', () => {
 });
 
 it('ProfilePic renders without fail', () => {
-  let component = mount(<ProfilePic />);
+  mount(<ProfilePic />);
 });
 
 it('ArticleCard renders without fail', () => {
-  let component = mount(<ArticleCard />);
+  mount(<ArticleCard />);
 });
 
 describe('profile page', () => {
@@ -43,4 +45,12 @@ describe('profile page', () => {
   it('renders profile page', () => {
     component.contains(<ProfilePic />);
   });
+});
+
+it('renders ProfileView without fail', () => {
+  shallow(<ViewProfile />);
+});
+
+it('renders EditProfileView without fail', () => {
+  shallow(<EditProfile />);
 });
