@@ -15,42 +15,60 @@ class GetArticles extends Component {
     }
   }
 
-  componentWillUpdate() {
-    if (this.props.articlesTypes === 'All Articles') {
-      this.props.fetchArticles();
-    } else if (this.props.articlesTypes === 'My Articles') {
+  componentDidUpdate() {
+    const { articlesTypes } = this.props;
+    if (articlesTypes === 'My Articles') {
       this.props.myArticles();
     }
   }
 
   render() {
-    const data = this.props.articles;
-    const showArticles = data.map(article => (
-      <div key={article.slug}>
-        <ArticleCard
-          date={article.createdAt}
-          title={article.title}
-          slug={article.slug}
-          description={article.description}
-          body={renderHTML(article.body)}
-          update={this.props.update}
-        />
-      </div>
-    ));
-
+    let noArticles;
+    const { update, articles, articlesTypes } = this.props;
+    const data = articles.results || articles;
+    if (data.length === 0) {
+      noArticles = 'NO ARTICLES TO DISPLAY';
+    }
+    let showArticles = null;
+    if (data) {
+      showArticles = data.map(article => (
+        <div key={article.slug}>
+          <ArticleCard
+            date={article.createdAt}
+            title={article.title}
+            slug={article.slug}
+            description={article.description}
+            body={renderHTML(article.body)}
+            update={update}
+            next={articles.next}
+            previous={articles.previous}
+          />
+        </div>
+      ));
+    }
     return (
       <div>
-          <NavigationBar />
+        <NavigationBar />
         <div className="container">
-        <div className="create_article"><span className="heading">{this.props.articlesTypes}</span></div>
+          <div className="create_article"><span className="heading">{articlesTypes}</span></div>
           {showArticles}
+          {noArticles
+            ? <div className="jumbotron"><center>{noArticles}</center></div> : ''}
+          <center>
+            <div className="paginationButton">
+              {articles.next
+                ? <button type="button" className="btn btn-outline-brown paginationButton-button" onClick={() => { this.props.fetchArticles(this.props.articles.next); }}>Next Page</button> : ''}
+              {articles.previous
+                ? <button type="button" className="btn btn-outline-brown paginationButton-button" onClick={() => { this.props.fetchArticles(this.props.articles.previous); }}>Prev Page</button> : ''}
+            </div>
+          </center>
         </div>
+        <br />
       </div>
     );
   }
 }
 GetArticles.propTypes = {
-  articles: PropTypes.isRequired,
   fetchArticles: PropTypes.func.isRequired,
   myArticles: PropTypes.func.isRequired,
   articlesTypes: PropTypes.string.isRequired,

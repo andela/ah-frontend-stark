@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import ReactQuill, {Quill} from 'react-quill'
+import ReactQuill from 'react-quill'
 import 'react-quill/dist/quill.snow.css';
 
 class ArticleForm extends Component {
@@ -8,7 +8,7 @@ state = {}
 render(){
   return (
     <div className="container">
-    <center><button className="btn btn-outline-brown" onClick={()=>{this.props.handleUpload()}}> upload image</button></center><br />
+    <center><button className="btn btn-outline-brown" id="uploadButton" onClick={()=>{this.props.handleUpload()}}> upload image</button></center><br />
       <form method="POST" id="form123"onSubmit={this.props.handleSubmit}>
         <div className="form-group">
           <input type="text" name="title" id="input1" className="form-control" defaultValue={this.props.titleValue} onChange={this.props.change} placeholder="your title here" required />

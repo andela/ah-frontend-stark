@@ -17,7 +17,7 @@ class ArticleHeader extends Component {
           {localStorage.getItem("username")}
           <br />
           {createdDate } | 3 min read
-        </div>
+       </div>
       </div>
     );
   }

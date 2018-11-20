@@ -24,6 +24,9 @@ describe('article component', () => {
   beforeEach(() => {
     mockStore({});
   });
+  const getEvent = () => ({
+    preventDefault: jest.fn(),
+  });
 
   it('should render create article without crashing', () => {
     shallow(
@@ -49,7 +52,7 @@ describe('article component', () => {
       articleSlug: 'this-is-a-slug',
       fetchArticles: jest.fn(),
       article: {
-      slug: 'man',
+        slug: 'man',
         title: 'man',
         description: 'you',
         body: 'head',
@@ -91,17 +94,18 @@ describe('article component', () => {
 
   it('should call handleSubmit function on submit', () => {
     const handleSubmit = jest.fn();
-    const wrapper = shallow(<CreateUpdate handleSubmit={handleSubmit} store={store}/>);
+    const wrapper = shallow(<CreateUpdate handleSubmit={handleSubmit} store={store} />);
     wrapper.dive().find('ArticleForm').simulate('submit', { preventDefault() {} });
     wrapper.update();
   });
 
   it('should call inputs on change state', () => {
     let wrapper;
-    const handleUpload=jest.fn()
+    const handleUpload = jest.fn();
     wrapper = shallow(<ArticleForm handleUpload={handleUpload} />);
     wrapper.find('#input1').simulate('change', { target: { name: 'title', value: 'hello' } });
     wrapper.find('#input2').simulate('change', { target: { name: 'description', value: 'hello' } });
+    wrapper.find('#uploadButton').simulate('click');
   });
 
   it('should call handleSubmit function on submit', () => {
@@ -120,7 +124,10 @@ describe('article component', () => {
       slug: 'title-two',
       deleteArticles: jest.fn(),
     };
-    shallow(<Router><ArticleCard store={store} {...props} deleteArticles /></Router>).instance();
+    const wrapper = mount(<Router><ArticleCard store={store} {...props} /></Router>);
+    console.log(wrapper.html())
+    wrapper.find('#but1').simulate('click');
+    wrapper.find('#deleteButton').simulate('click');
   });
 
   it('should render createUpdate app', () => {

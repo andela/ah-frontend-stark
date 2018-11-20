@@ -32,7 +32,7 @@ export class ArticleCard extends Component {
             <div class="col-lg-1">    
             <div class="row">
             <div class="col-lg-12"> <button className="fa fa-edit btn-article" id="but1" aria-hidden="true" onClick={()=>{this.goUpdate(this.props.slug)}}/></div></div><br /><br />
-          <div class="row"><div class="col-lg-12"><button type="button" className="fa fa-trash btn-article" onClick={()=>{this.props.deleteArticles(this.props.slug)}}/></div></div></div> :" "}</div>
+          <div class="row"><div class="col-lg-12"><button type="button" id="deleteButton" className="fa fa-trash btn-article" onClick={()=>{this.props.deleteArticles(this.props.slug)}}/></div></div></div> :" "}</div>
             {/* Icons bar goes here */}
       </div>
       </div>
