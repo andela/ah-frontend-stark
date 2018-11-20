@@ -5,9 +5,9 @@ import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 
 import ProfilePic from './profilePic';
-import ArticleCard from './ArticleCard';
 import { fetchProfile } from '../actions/profileActions';
 import NavigationBar from './navigation/NavigationBar';
+import ReadingStatus from './readingStatus';
 
 export class ProfilePage extends Component {
   componentDidMount() {
@@ -15,6 +15,7 @@ export class ProfilePage extends Component {
   }
 
   render() {
+    console.log(this.props.profile)
     const profile = this.props.profile || {};
     const {
       username, bio, location, fun_fact: funFact, image,
@@ -53,6 +54,8 @@ export class ProfilePage extends Component {
             </div>
           </div>
         </div>
+        <hr />
+        <ReadingStatus read={profile.articles_read} wrote={profile.articles_written} />
       </React.Fragment>
     );
   }

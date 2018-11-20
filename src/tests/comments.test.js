@@ -32,7 +32,7 @@ describe('Comments Component', () => {
       </Provider>,
     );
   });
-  console.log(wrapper);
+
   it('should render comments comment', () => {
     expect(wrapper).toHaveLength(1);
   });
