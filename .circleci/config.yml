@@ -24,5 +24,6 @@ jobs:
           name: Run Test and Coverage
           command: |
             ./cc-test-reporter before-build
-            npm test -- --coverage
-            ./cc-test-reporter after-build --exit-code $?
+            yarn test --coverage
+            ./cc-test-reporter format-coverage coverage/lcov.info -t lcov
+            ./cc-test-reporter upload-coverage
