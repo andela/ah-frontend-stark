@@ -9675,15 +9675,6 @@ react-test-renderer@^16.0.0-0:
     react-is "^16.6.3"
     scheduler "^0.11.2"
 
-react-toastify@^4.4.0:
-  version "4.4.3"
-  resolved "https://registry.yarnpkg.com/react-toastify/-/react-toastify-4.4.3.tgz#bf4a514b4a160e20ad227a95bd84c9853d1f86ca"
-  integrity sha512-MHv9eAkb02xLKemOtS1mnv+jq+2iThYG8pWJxRCj5s/wgr5lU69uVLh/bTy7lU/HJq0uJEcdwfuIeHr4KGuoUQ==
-  dependencies:
-    classnames "^2.2.6"
-    prop-types "^15.6.0"
-    react-transition-group "^2.4.0"
-
 react-toastify@^4.4.3:
   version "4.4.3"
   resolved "https://registry.yarnpkg.com/react-toastify/-/react-toastify-4.4.3.tgz#bf4a514b4a160e20ad227a95bd84c9853d1f86ca"

@@ -3,9 +3,10 @@ import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 import NavigationPages from './NavigationPages';
+import { logOut } from '../../common/functions';
 
 const username = localStorage.getItem('username');
-const loggedIn = Object.keys(localStorage).length;
+const loggedIn = localStorage.getItem('token');
 
 
 const NavigationBar = () => (
@@ -67,9 +68,9 @@ const NavigationBar = () => (
                     My articles
                 </Link>
                 <div className="dropdown-divider" />
-                <Link class="dropdown-item" to="#">
-                    Log out
-                </Link>
+                <button type="button" onClick={logOut} className="dropdown-item">
+                  Log out
+                </button>
               </div>
             </li>
           </div>
