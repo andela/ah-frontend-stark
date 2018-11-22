@@ -53,7 +53,7 @@ export class LoginForm extends Component {
 
   toggleModal = () => {
     this.props.toggleModal();
-  }
+  };
 
   handleSocial = (provider) => {
     const queryparams = '?Provider=' + provider + '&RedirectTo=' + SOCIAL_REDIRECT_URL;

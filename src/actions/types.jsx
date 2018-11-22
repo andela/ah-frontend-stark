@@ -11,3 +11,7 @@ export const RATING_ERROR = 'RATING_ERROR';
 export const RATING_NOT_ALLOWED = 'RATING_NOT_ALLOWED';
 export const CHECK_EMAIL = 'CHECK_EMAIL';
 export const UPDATE_PASSWORD = 'UPDATE_PASSWORD';
+export const GET_COMMENT = 'GET_COMMENT';
+export const ADD_COMMENT = 'ADD_COMMENT';
+export const ADD_REPLY = 'ADD_REPLY';
+export const GET_REPLY = 'GET_REPLY';
