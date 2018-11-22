@@ -80,7 +80,6 @@ class Signup extends Component {
 
   onSubmit(evt) {
     evt.preventDefault();
-
     const user = {
       username: this.state.username,
       email: this.state.email,

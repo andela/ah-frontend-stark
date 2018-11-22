@@ -12,14 +12,13 @@ import getErrorMessages from '../utils/ArticleValidation';
 
 
 const baseurl = 'https://ah-backend-stark-staging.herokuapp.com';
-
-export const fetchArticles = () => dispatch => fetch(`${baseurl}/api/articles/`, {
+export const fetchArticles = (url = 'https://ah-backend-stark-staging.herokuapp.com/api/articles/') => dispatch => fetch(`${url}`, {
   method: 'GET',
 })
   .then(res => res.json())
   .then(data => dispatch({
     type: FETCH_ARTICLES,
-    payload: data.results,
+    payload: data,
   }));
 
 export const singleArticle = slug => dispatch => fetch(`${baseurl}/api/articles/${slug}`)
@@ -74,6 +73,7 @@ export const createArticles = articleData => dispatch => fetch(`${baseurl}/api/a
       });
     }
   });
+
 export const UpdateArticleFunc = (slug, newData) => dispatch => fetch(`https://ah-backend-stark-staging.herokuapp.com/api/articles/${slug}`, {
   method: 'PUT',
   headers: myHeaders,

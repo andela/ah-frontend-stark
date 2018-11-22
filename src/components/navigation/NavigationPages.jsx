@@ -2,9 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 const NavigationPages = () => (
-    <div className="navbar">
+  <div className="navbar">
       <li className="nav-item ">
-        <Link className="nav-link" to="#">
+        <Link className="nav-link" to="/allArticles">
           All
         </Link>
       </li>
@@ -61,7 +61,7 @@ const NavigationPages = () => (
           <Link className="dropdown-item" to="#">
             Bitcoin
           </Link>
-          </div>
+        </div>
       </li>
     </div>
 );

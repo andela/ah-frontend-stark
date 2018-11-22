@@ -68,7 +68,7 @@ componentDidUpdate(prevProps){
             <div className="capital article-title"><h3>{article.title}</h3></div>
             <div ><h5>{article.description}</h5></div>
             <center><img className="img-article" src={article.image} /></center>
-            <div class="article-fontsize">
+            <div className="article-fontsize">
               {renderHTML(article.body)}
             </div>
           </div>
