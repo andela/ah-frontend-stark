@@ -35,13 +35,13 @@ export class ProfilePage extends Component {
             <div className="col-sm-5">
               <span className="heading">{username}</span>
               <br />
-              <span>{bio}</span>
+              <span>{bio ? bio : 'Your profile is incomplete...'}</span>
               <br />
-              <span>{funFact}</span>
+              <span>{funFact ? funFact : 'Click the edit button to update it!'}</span>
               <br />
-              <h6>Followers:2 | Following:1</h6>
-              <i className="fa fa-map-marker" />
-              <span>{location}</span>
+              <h6>Followers:0 | Following:0</h6>
+              <i className="fa fa-map-marker-alt" />
+              <span>{location ? location : 'Unknown'}</span>
               <br />
             </div>
             <div className="col-sm-2">
@@ -50,21 +50,6 @@ export class ProfilePage extends Component {
                   Edit profile
                 </button>
               </Link>
-            </div>
-          </div>
-        </div>
-        <hr />
-        <div className="container">
-          <div className="row">
-            <div className="col-sm-1" />
-            <div className="col-sm-10">Latest</div>
-          </div>
-          <br />
-          <div className="row">
-            <div className="col-sm-1" />
-            <div className="col-sm-10">
-              <ArticleCard image={image} />
-              <ArticleCard image={image} />
             </div>
           </div>
         </div>
