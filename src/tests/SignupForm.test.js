@@ -3,7 +3,7 @@ import Adapter from 'enzyme-adapter-react-16';
 import React from 'react';
 import { BrowserRouter as Router } from 'react-router-dom';
 import configureMockStore from 'redux-mock-store';
-import Signup from '../components/SignupForm';
+import Signup  from '../components/SignupForm';
 import store from '../store';
 
 
@@ -22,7 +22,11 @@ describe('article component', () => {
     },
   });
   it('should render signup form without crashing', () => {
-   const component = mount(<Router><Signup store={store} /></Router>);
-  component.find('#signup-btn').simulate('submit', getEvent());
+
+    const component = mount(<Router><Signup store={store} /></Router>);
+    component.find('#signup-btn').simulate('submit', getEvent());
+  });
+  it('should render signup form without crashing', () => {
+    const wrapper = shallow(<Router><Signup store={store} /></Router>).dive().instance();
   });
 });

@@ -17,7 +17,7 @@ export class ArticleCard extends Component {
     return (
       <div>
       <div className="profile-card ">
-        <ArticleHeader image={image} date={this.props.date}/><br />
+        <ArticleHeader image={image} date={this.props.date} author={this.props.author}/><br />
         <div className="row">
         <div className="col-lg-11 line">
               <Link to={`/article/${this.props.slug}`}>

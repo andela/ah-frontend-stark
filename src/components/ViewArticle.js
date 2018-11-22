@@ -19,6 +19,7 @@ import Comments from './comments';
 class Article extends Component {
   state = {
     createdAt:"",
+    author:"",
   }
   componentDidMount() {
     if (this.props.match.params.slug) {
@@ -55,7 +56,8 @@ componentDidUpdate(prevProps){
     const data1 = Object.values(this.props.article);
     const data2=data1[0];
       this.setState({
-        createdAt:data2["createdAt"]
+        createdAt:data2["createdAt"],
+        author:data2["author_name"]
       })
 
     }
@@ -137,7 +139,7 @@ componentDidUpdate(prevProps){
         <div class="row article-marign ">
         <div className="col-lg-1"></div>
         <div className="col-lg-10">
-        <ArticleHeader image={image} date={this.state.createdAt}/></div>
+        <ArticleHeader image={image} date={this.state.createdAt} author={this.state.author}/></div>
         </div>
           {articles}
           <br />

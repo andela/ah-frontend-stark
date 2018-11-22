@@ -14,7 +14,7 @@ class ArticleHeader extends Component {
           <SmallProfilePic image={this.props.image} />
         </div>
         <div className="col-sm-4 text-left">
-          {localStorage.getItem("username")}
+          {this.props.author}
           <br />
           {createdDate } | 3 min read
        </div>
