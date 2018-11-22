@@ -98,7 +98,7 @@ export class LoginForm extends Component {
             <br />
             <p className="small-text">
               <u>
-                <a href="/homepage">forgot password?</a>
+                <a href="/password-reset/">forgot password?</a>
               </u>{" "}
               /{" "}
               <u>

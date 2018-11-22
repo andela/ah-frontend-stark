@@ -28,10 +28,12 @@ import { ToastContainer } from "react-toastify";
 import "react-toastify/dist/ReactToastify.min.css";
 
 import SocialAuth from './components/SocialAuth';
+import UpdatePassword from './views/updatePassword';
+import SuccessPage from './views/successPage';
 
 class App extends Component {
   render() {
-    let username = localStorage.getItem("username");
+    const username = localStorage.getItem('username');
     return (
       <Provider store={store}>
         <div>
@@ -40,6 +42,8 @@ class App extends Component {
             <Switch>
               <Route exact path="/" component={HomePage} />
               <Route exact path="/password-reset/" component={ResetPassword} />
+              <Route exact path="/password-reset/done" component={UpdatePassword} />
+              <Route exact path="/password-reset/success" component={SuccessPage} />
               <Route exact path="/users/" component={Register} />
               <Route exact path="/homepage" component={TempHome} />
               <Route exact path="/createArticle" component={CreateArticle} />
