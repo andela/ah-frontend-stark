@@ -4,8 +4,8 @@ import PropTypes from 'prop-types';
 const SmallProfilePic = ({ image }) => (
   <div className="col-sm-2">
     <img
-      src={image}
-      alt="AH"
+      src={image ? image : require('../images/A.png')}
+      alt="profile-pic"
       className="rounded-circle"
       width="50"
       height="50"

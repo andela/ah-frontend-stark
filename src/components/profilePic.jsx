@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const ProfilePic = ({ image }) => (
   <img
-    src={image}
+    src={image ? image : require('../images/A.png')}
     alt="profile-pic"
     className="rounded-circle"
     width="200"
