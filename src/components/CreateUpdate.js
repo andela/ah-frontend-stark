@@ -14,7 +14,8 @@ class CreateUpdate extends Component {
             body:"",
             image:"",
             error: "",
-        } 
+            tags: [],
+        }   
         change=(e)=>{
             this.setState({
                 [e.target.name]:e.target.value
@@ -42,13 +43,19 @@ class CreateUpdate extends Component {
     imageview.open();
   };
   
+
+
+  handleUpdateTags = tags => {
+    this.setState({ tags });
+  };
   handleSubmit=(event)=>{
       event.preventDefault()
       const data={
           article:{title:this.state.title,
           description:this.state.description,
           body:this.state.body,
-          image:this.state.image
+          image: this.state.image,
+          tagList: this.state.tags
         }
         }
         if(this.props.article1==="creating_article"){
@@ -94,6 +101,8 @@ class CreateUpdate extends Component {
          titleValue={this.props.titleValue}
          body={this.state.body}
          descValue={this.props.descValue}
+         tags={this.state.tags}
+         handleUpdateTags={this.handleUpdateTags}
         />
         </div>
          );

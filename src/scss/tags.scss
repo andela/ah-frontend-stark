@@ -1,0 +1,46 @@
+$black: #000;
+$white: #fff;
+$chocolate: #d2691e;
+$grayish: #ced4da;
+
+.article-tag {
+  border: solid 1px $black;
+  list-style: none;
+  margin: 20px 20px 0px 0px;
+  height: 40px;
+  min-width: 6em;
+  border-radius: 15px;
+  padding-top: 7px;
+  text-align: center;
+  display: inline-block;
+}
+
+.article-tags {
+    margin: 3em;
+    padding: 20px 0;
+    border-top: solid 1px $grayish;
+}
+
+.tag-input-field {
+    min-width: 120px;
+    border: solid 1px $black;
+    padding: 5px;
+}
+
+.tag-item {
+    margin: 10px;
+    border: solid 1px $chocolate;
+    padding: 5px;
+
+    button {
+        border: 0;
+        background-color:$white;
+        color: $chocolate;
+    }
+}
+
+.tags-container {
+    padding: 20px;
+    border: solid 1px $grayish;
+    background-color: $white;
+}

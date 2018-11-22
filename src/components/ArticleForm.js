@@ -2,6 +2,8 @@ import React, { Component } from 'react';
 import ReactQuill from 'react-quill'
 import 'react-quill/dist/quill.snow.css';
 
+import AddTags from '../components/tags/AddArticleTags';
+
 class ArticleForm extends Component {
 state = {}
 
@@ -31,6 +33,7 @@ render(){
         </div>
         <br />
         <br />
+        <AddTags tags={this.props.tags} handleUpdateTags={this.props.handleUpdateTags}/>
         <div className="form-group">
           <center><button className="btn btn-outline-brown" type="submit">{this.props.button_name1}</button></center>
         </div>
