@@ -6,7 +6,7 @@ class AllArticles extends Component {
         return (
             <div>
             <GetArticles
-                articlesTypes= "All Articles"
+                articlesTypes= " "
             />
            </div> 
          );

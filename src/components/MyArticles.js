@@ -4,7 +4,7 @@ class MyArticles extends Component {
     state = {  }
     render() { 
         return (
-            <div>
+            <div><br />
             <GetArticles
                 articlesTypes= "My Articles"
                 update="true"
