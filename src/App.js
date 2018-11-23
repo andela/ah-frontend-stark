@@ -15,6 +15,7 @@ import AllArticles from './components/AllArticles';
 import MyArticles from './components/MyArticles';
 import GetArticles from './components/GetArticles';
 import Article from './components/ViewArticle';
+import AllUsers from './components/AllUsers';
 import ErrorNotFound from './views/notfound';
 import store from './store';
 import ResetPassword from './views/ResetPassword';
@@ -45,11 +46,12 @@ class App extends Component {
               <Route exact path="/password-reset/success" component={SuccessPage} />
               <Route exact path="/users/" component={Register} />
               <Route exact path="/homepage" component={TempHome} />
+              <Route exact path="/allusers" component={AllUsers} />
               <Route exact path="/createArticle" component={CreateArticle} />
               <Route exact path="/article/:slug/Edit" component={UpdateArticle} />
               <Route exact path="/article/:slug" component={Article} />
               <Route exact path="/getArticles" component={GetArticles} />
-              <Route exact path={"/profile/" + username} component={ViewProfile} />
+              <Route exact path="/profile/:username" component={ViewProfile} />
               <Route exact path={"/profile/" + username + "/edit"} component={EditProfile}/>
               <Route exact path="/allArticles" component={AllArticles} />
               <Route exact path="/myArticles" component={MyArticles} />

@@ -1,11 +1,16 @@
-import { SIGNUP_SUCCESS, SIGNUP_FAILURE } from '../actions/types';
-
+import {
+  SIGNUP_SUCCESS,
+  SIGNUP_FAILURE,
+  GET_ALL_USERS,
+} from '../actions/types';
+ 
 const initialState = {
   users: [],
+  userList: [],
   user: {},
   IsRegistered: false,
 };
-
+ 
 export default function (state = initialState, action) {
   switch (action.type) {
     case SIGNUP_SUCCESS:
@@ -18,6 +23,11 @@ export default function (state = initialState, action) {
       return {
         ...state,
         IsRegistered: false,
+      };
+    case GET_ALL_USERS:
+      return {
+        ...state,
+        userList: action.payload.profile.Authors,
       };
     default:
       return state;

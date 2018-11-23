@@ -19,7 +19,7 @@ const DislikedData = {
   status: { username: 'testuser', action: false, article: 'testarticle' },
 };
  
- 
+
 describe('Article reducer: Like/Dislike articles', () => {
   it('should return the initial state', () => {
     expect(articleReducer(initialState, {})).toEqual(initialState);

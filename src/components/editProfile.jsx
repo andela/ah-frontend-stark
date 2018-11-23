@@ -40,8 +40,8 @@ class ProfileUpdate extends Component {
         image: this.state.profile.image
       }
     };
-
-    this.props.updateProfile(userprofile);
+    const currentUser = localStorage.getItem('username');
+    this.props.updateProfile(userprofile, currentUser);
     this.componentDidUpdate = () => {
       if (this.state.profile.username) {
         localStorage.setItem("username", this.state.profile.username);

@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 import NavigationPages from './NavigationPages';
 import { logOut } from '../../common/functions';
@@ -10,7 +12,7 @@ const loggedIn = localStorage.getItem('token');
 
 
 const NavigationBar = () => (
-  <nav className="navbar fixed-top navbar-expand-lg navbar-light bg-light">
+  <nav className="navbar  navbar-expand-lg navbar-light bg-light">
     <Link className="navbar-brand brown" to="/homepage">
         Author's Haven
     </Link>
@@ -29,7 +31,7 @@ const NavigationBar = () => (
       <ul className="navbar-nav mr-auto">
         <NavigationPages />
       </ul>
-
+      <ToastContainer />
       <form className="form-inline my-2 my-lg-0">
         <input
           className="form-control mr-sm-1 searchbar"
@@ -66,6 +68,12 @@ const NavigationBar = () => (
                 </Link>
                 <Link className="dropdown-item" to="/myArticles">
                     My articles
+                </Link>
+                <div className="dropdown-divider" />
+                <Link to="/allusers">
+                  <button type="submit" className="dropdown-item">
+                            Authors
+                  </button>
                 </Link>
                 <div className="dropdown-divider" />
                 <button type="button" onClick={logOut} className="dropdown-item">
