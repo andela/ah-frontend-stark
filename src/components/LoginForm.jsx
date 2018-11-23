@@ -2,10 +2,8 @@ import React, { Component } from 'react';
 import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import loginAction from '../actions/loginActions';
-import '../style/signin.css';
-import '../css/social.css';
+import { toast } from 'react-toastify';
+import {loginAction} from '../actions/loginActions';
 import { SOCIAL_REDIRECT_URL, SOCIAL_LAUNCH_DEFAULT_URL } from '../common/base';
 
 export class LoginForm extends Component {
@@ -13,9 +11,16 @@ export class LoginForm extends Component {
     user: {
       email: "",
       password: ""
-    },
-    status: "none"
+    }
   };
+
+  componentWillReceiveProps(nextProps) {
+    if (nextProps.status) {
+      if (nextProps.status === 'error') {
+        this.listErrors(nextProps.message)
+      }
+    }
+  }
 
   onChange = e => {
     this.setState({ [e.target.name]: e.target.value });
@@ -29,26 +34,23 @@ export class LoginForm extends Component {
         password: this.state.password
       }
     };
-    this.props.loginAction(userdata).then(() => {
-      const { history } = this.props;
-      window.location.reload();
-      history.push("/homepage");
+    this.props.loginAction(userdata).then((response) => {
+      if (response.success) {
+        const { history } = this.props;
+        window.location.reload();
+        history.push("/homepage");
+      }
     });
   };
 
   listErrors = message => {
     const errors = message;
-    const msg = [];
-    msg.push(<hr />);
     for (var key in errors) {
-      msg.push(
-        <span key={key}>
-          {`${key}: ${errors[key]}`}
-          <br />
-        </span>
-      );
+      toast.error(`${key}:   ${errors[key]}`, {
+        position: toast.POSITION.TOP_CENTER,
+        hideProgressBar:true
+    });
     }
-    return msg;
   };
 
   toggleModal = () => {
@@ -61,7 +63,14 @@ export class LoginForm extends Component {
   };
 
   render() {
-    const { message, status } = this.props;
+    const { status, message } = this.props;
+    if (status === "loading") {
+      toast.success(`Welcome back, ${message.user.username}`, {
+        position: toast.POSITION.TOP_CENTER,
+        hideProgressBar:true
+    });
+      (this.toggleModal())
+     }
     return (
       <div>
         <div className="auth-form">
@@ -120,11 +129,6 @@ export class LoginForm extends Component {
           </button>
           <div className="auth-error">
             <b>
-              {status === "error"
-                ? this.listErrors(message)
-                : (status === "loading")
-                  ? (this.toggleModal())
-                  : null}
             </b>
           </div>
         </div>
@@ -135,8 +139,6 @@ export class LoginForm extends Component {
 
 LoginForm.propTypes = {
   loginAction: PropTypes.func.isRequired,
-  email: PropTypes.string.isRequired,
-  password: PropTypes.string.isRequired,
 };
 
 const mapStateToProps = state => ({

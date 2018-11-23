@@ -1,24 +1,23 @@
-import { Exception } from 'handlebars';
 import { LOGIN_SUCCESS, LOGIN_FAILURE } from './types';
 
 
 const baseurl = 'https://ah-backend-stark-staging.herokuapp.com';
 
-const loginSuccess = data => (dispatch) => {
+export const loginSuccess = data => (dispatch) => {
   dispatch({
     type: LOGIN_SUCCESS,
     payload: data,
   });
 };
 
-const loginFailure = data => (dispatch) => {
+export const loginFailure = data => (dispatch) => {
   dispatch({
     type: LOGIN_FAILURE,
     payload: data,
   });
 };
 
-const loginAction = userdata => dispatch => fetch(`${baseurl}/api/users/login/`, {
+export const loginAction = userdata => dispatch => fetch(`${baseurl}/api/users/login/`, {
   method: 'POST',
   headers: {
     'Content-type': 'application/json',
@@ -29,13 +28,12 @@ const loginAction = userdata => dispatch => fetch(`${baseurl}/api/users/login/`,
   .then((data) => {
     if (data.errors) {
       dispatch(loginFailure(data));
-      throw Exception;
+      return { success: false };
     }
     dispatch(loginSuccess(data));
     const token = data.user.token;
     localStorage.setItem('token', token);
     const username = data.user.username;
     localStorage.setItem('username', username);
+    return { success: true };
   });
-
-export default loginAction;
