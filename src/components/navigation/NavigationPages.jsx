@@ -4,11 +4,6 @@ import { Link } from 'react-router-dom';
 const NavigationPages = () => (
   <div className="navbar">
       <li className="nav-item ">
-        <Link className="nav-link" to="/allArticles">
-          All
-        </Link>
-      </li>
-      <li className="nav-item ">
         <Link className="nav-link" to="#">
           Health
         </Link>

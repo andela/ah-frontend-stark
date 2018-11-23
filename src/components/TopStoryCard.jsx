@@ -1,12 +1,22 @@
-import React from "react";
+import React from 'react';
+import renderHTML from 'react-render-html';
+import { Link } from 'react-router-dom';
 
-const TopStory = () => (
-  <div className="top-story">
-    <h5 className="card-title">My favourite song</h5>
-    <p className="card-text">
-      My favorite song is one that lifts my moods, makes me view the world with
-      new eyes and...
-    </p>
+const TopStory = (props) => {
+  let slug;
+  let topStoryTitle;
+  let topStoryBody;
+  if (props.topStory) {
+    slug = props.topStory.slug;
+    topStoryTitle = props.topStory.title;
+    topStoryBody = renderHTML(props.topStory.body);
+  }
+  return (
+    <div className="top-story topStory line">
+    <Link to={`/article/${slug}`}>
+        <h5 className="card-title">{topStoryTitle}</h5>
+      </Link>
+    <div className="card-text">{topStoryBody}</div>
     <p className="card-text">
       <small className="text-muted">25 Oct 2018</small>
     </p>
@@ -16,6 +26,6 @@ const TopStory = () => (
       </small>
     </p>
   </div>
-);
-
+  );
+};
 export default TopStory;

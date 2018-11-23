@@ -8,7 +8,7 @@ import NavigationBar from './navigation/NavigationBar';
 
 class GetArticles extends Component {
   componentDidMount() {
-    if (this.props.articlesTypes === 'All Articles') {
+    if (this.props.articlesTypes === ' ') {
       this.props.fetchArticles();
     } else if (this.props.articlesTypes === 'My Articles') {
       this.props.myArticles();

@@ -1,4 +1,20 @@
 .paginationButton-button{
     margin-left: 5px 
   }
+.small{
+  height:90px;
+  max-height:90px;
+  overflow: hidden;
+    text-overflow: ellipsis;
+}
+.topStory{
+  height:180px;
+  overflow: hidden;
+    text-overflow: ellipsis;
+}
+.big-article{
+  height:25px;
+  overflow: hidden;
+    text-overflow: ellipsis;
+}
 @import './scss/tags.scss';

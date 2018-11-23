@@ -30,7 +30,7 @@ describe('article actions', () => {
     fetchMock.get(`${baseurl}/api/articles/`, responseData);
 
     const expectedActions = [
-      { payload: undefined, type: 'FETCH_ARTICLES' },
+      { payload: { payload: [] }, type: 'FETCH_ARTICLES' },
     ];
     store.dispatch(fetchArticles()).then(() => {
       expect(store.getActions()).toEqual(expectedActions);
