@@ -57,7 +57,7 @@ export class LoginForm extends Component {
 
   handleSocial = (provider) => {
     const queryparams = '?Provider=' + provider + '&RedirectTo=' + SOCIAL_REDIRECT_URL;
-    window.location = SOCIAL_LAUNCH_DEFAULT_URL + queryparams;
+    window.location = SOCIAL_LAUNCH_DEFAULT_URL + provider + '/' + queryparams;
   };
 
   render() {
