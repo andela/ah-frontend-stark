@@ -38,6 +38,7 @@ class GetArticles extends Component {
             title={article.title}
             slug={article.slug}
             author={article.author_name}
+            readTime={article.read_time}
             description={article.description}
             body={renderHTML(article.body)}
             update={update}

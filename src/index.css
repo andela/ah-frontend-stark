@@ -141,9 +141,11 @@ input:focus, .btn:active {
 }
 
 .far:active {
+  color: black !important;
+}
+.far {
+  background-color: chocolate;
   font-weight: 900 !important;
-  background-color: rgb(209, 209, 209) !important;
-  color: black;
   outline: none !important;
   box-shadow: none !important;
   -webkit-box-shadow: none;
@@ -322,4 +324,8 @@ border:2px solid red
 }
 .article-title{
   font-weight: bolder;
+}
+.read-time {
+  font-size: 15px;
+  color: grey;
 }

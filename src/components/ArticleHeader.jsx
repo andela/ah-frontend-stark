@@ -16,7 +16,7 @@ class ArticleHeader extends Component {
         <div className="col-sm-4 text-left">
           {this.props.author}
           <br />
-          {createdDate } | 3 min read
+          {createdDate } | {this.props.readTime}
        </div>
       </div>
     );
