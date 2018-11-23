@@ -18,3 +18,22 @@
     text-overflow: ellipsis;
 }
 @import './scss/tags.scss';
+.reading-stats {
+  width: 15em;
+  height: 15em;
+  color: white;
+  /* background-color: chocolate; */
+  border: solid 1px chocolate;
+  text-align: center;
+}
+.reading-stats-title {
+  /* height: em; */
+  background-color: chocolate;
+  padding: 10px;
+  font-size: 1.5em;
+}
+.reading-stats-body {
+  /* background-color: chocolate; */
+  font-size: 6em;
+  color: chocolate;
+}
