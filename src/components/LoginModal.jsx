@@ -16,9 +16,7 @@ class LoginModal extends Component {
           <div className="modal-dialog">
             <div className="modal-form">
             <LoginForm 
-            toggleModal={this.toggleModal}
-            email={"none"}
-            password={"none"} 
+            toggleModal={this.toggleModal} 
             />
             </div>
           </div>

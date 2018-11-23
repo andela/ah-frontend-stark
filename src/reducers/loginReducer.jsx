@@ -4,7 +4,7 @@ import { LOGIN_SUCCESS, LOGIN_FAILURE } from '../actions/types';
 const initialState = {
   message: '',
   user: {},
-  status: "none",
+  status: "",
 };
 
 export default function (state = initialState, action) {
@@ -12,8 +12,8 @@ export default function (state = initialState, action) {
     case LOGIN_FAILURE:
       return {
         ...state,
-        message: action.payload.errors,
         status: "error",
+        message: action.payload.errors,
       };
 
     case LOGIN_SUCCESS:

@@ -2,9 +2,8 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import renderHTML from 'react-render-html';
 import PropTypes from 'prop-types';
-import { ToastContainer } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import NavigationBar from './navigation/NavigationBar';
+import { toast } from 'react-toastify';
 import ArticleHeader from './ArticleHeader';
 import {
   singleArticle,
@@ -25,6 +24,20 @@ class Article extends Component {
     if (this.props.match.params.slug) {
       const slug = this.props.match.params.slug;
       this.props.singleArticle(slug);
+    }
+  }
+
+  componentWillReceiveProps() {
+    if (this.props.like === 'liked') {
+      toast.success("You have liked this article", {
+        position: toast.POSITION.TOP_CENTER,
+        hideProgressBar:true
+    });
+    } else if (this.props.like === 'disliked') {
+      toast.error("You have disliked this article", {
+        position: toast.POSITION.TOP_CENTER,
+        hideProgressBar:true
+    });
     }
   }
 
@@ -78,7 +91,6 @@ componentDidUpdate(prevProps){
               <div className="center">
                 <h5>{article.description}</h5>
               </div>
-              <ToastContainer />
               <center>
                 <img className="img-article" src={article.image} />
               </center>
@@ -155,6 +167,7 @@ Article.propTypes = {
 
 const mapStateToProps = state => ({
   article: state.articles.article,
+  like: state.articles.like
 });
 
 export default connect(

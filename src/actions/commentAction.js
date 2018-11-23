@@ -8,7 +8,6 @@ export const fetchAction = slug => (dispatch) => {
   fetch(`${baseUrl}/api/articles/${slug}/comments/`)
     .then(response => response.json())
     .then((data) => {
-      console.log(data);
       dispatch({
         type: GET_COMMENT,
         payload: data.comments,
